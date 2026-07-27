@@ -1,0 +1,33 @@
+title: Dry Fish 🐟
+description: Programmer, Meteorologist, Astronomer
+url: https://dryfish09.github.io
+baseurl: ""
+
+# Theme settings
+theme: null
+markdown: kramdown
+highlighter: rouge
+
+# Social links
+github_username: dryfish09
+email: realmg51@gmail.com
+discord: https://discord.gg/wr4FSEdPb
+
+# Build settings
+permalink: pretty
+exclude:
+  - .github/
+  - README.md
+  - .gitignore
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
