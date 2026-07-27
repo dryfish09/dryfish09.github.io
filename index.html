@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Fish 🐟 · About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f0f4f8 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #1a202c;
+        }
+
+        .card {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 3rem;
+            padding: 2.8rem 3rem;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.6) inset;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 2px dashed #e2e8f0;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 16px 32px -10px rgba(245, 158, 11, 0.35);
+            border: 4px solid white;
+            position: relative;
+        }
+        .avatar::after {
+            content: "🐟";
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            font-size: 1.6rem;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .title-group h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .title-group h1 .badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #f59e0b;
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+        }
+        .title-group .pronouns {
+            font-size: 0.9rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .title-group .subhead {
+            font-size: 1rem;
+            color: #475569;
+            margin-top: 0.3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        .subhead i { width: 1.2rem; color: #64748b; }
+
+        .bio {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 1.6rem 2rem;
+            border-radius: 2rem;
+            margin-bottom: 2.2rem;
+            border-left: 6px solid #f59e0b;
+            color: #78350f;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+        }
+        .bio i { color: #d97706; margin-right: 0.75rem; }
+        .bio .fish { font-size: 1.4rem; }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .info-section h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .info-section h3 i { margin-right: 8px; color: #f59e0b; }
+
+        .info-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .info-section ul li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.98rem;
+            color: #1e293b;
+        }
+        .info-section ul li i {
+            width: 1.4rem;
+            color: #f59e0b;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .info-section ul li a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .info-section ul li a:hover { text-decoration: underline; }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        .skill-tags span {
+            background: #dbeafe;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e3a8a;
+        }
+        .skill-tags .kotlin { background: #7f52ff; color: white; }
+        .skill-tags .csharp { background: #512bd4; color: white; }
+        .skill-tags .cpp { background: #00599c; color: white; }
+        .skill-tags .css { background: #264de4; color: white; }
+
+        .fave-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        .fave-tags span {
+            background: #f1f5f9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .org-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f1f5f9;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-top: 0.5rem;
+        }
+        .org-badge i { color: #f59e0b; }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+            padding-top: 1.8rem;
+            border-top: 2px dashed #e2e8f0;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px -4px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: all 0.15s ease;
+        }
+        .social-links a i { font-size: 1.2rem; }
+        .social-links a .fa-github { color: #0f172a; }
+        .social-links a .fa-envelope { color: #ea4335; }
+        .social-links a .fa-discord { color: #5865f2; }
+        .social-links a:hover {
+            transform: translateY(-3px);
+            border-color: #f59e0b;
+            box-shadow: 0 12px 24px -12px rgba(245, 158, 11, 0.25);
+            background: #fffbeb;
+        }
+
+        .pinned-repos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .pinned-repo {
+            background: white;
+            padding: 0.8rem 1rem;
+            border-radius: 1.2rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.15s;
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .pinned-repo:hover {
+            border-color: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.08);
+        }
+        .pinned-repo i { color: #f59e0b; font-size: 1rem; }
+        .pinned-repo .lang {
+            font-size: 0.7rem;
+            background: #f1f5f9;
+            padding: 0.05rem 0.5rem;
+            border-radius: 20px;
+            color: #64748b;
+            margin-left: auto;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+        .footer-note .made-with {
+            color: #f59e0b;
+        }
+
+        @media (max-width: 750px) {
+            .card { padding: 1.8rem; border-radius: 2rem; }
+            .profile-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .title-group h1 { font-size: 2rem; }
+            .grid-2col { grid-template-columns: 1fr; gap: 1.5rem; }
+            .social-links a { width: 100%; justify-content: center; }
+            .pinned-repos { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .avatar { width: 80px; height: 80px; font-size: 2.6rem; }
+            .avatar::after { font-size: 1.2rem; bottom: -4px; right: -4px; }
+            .bio { font-size: 0.95rem; padding: 1rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- ===== HEADER ===== -->
+        <div class="profile-header">
+            <div class="avatar">DF</div>
+            <div class="title-group">
+                <h1>
+                    dryfish09
+                    <span class="badge">🐟 Dry Fish</span>
+                    <span class="pronouns">he/him</span>
+                </h1>
+                <div class="subhead">
+                    <span><i class="fas fa-map-pin"></i> Beach 🏖️</span>
+                    <span><i class="fas fa-clock"></i> 07:11 (UTC +08:00)</span>
+                    <span><i class="fas fa-users"></i> 14 followers · 30 following</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BIO (direct from README) ===== -->
+        <div class="bio">
+            <i class="fas fa-quote-left"></i>
+            <span class="fish">👋</span> Hi there! I'm Dry Fish 🐟<br>
+            I'm just a dried fish and I know how to use GitHub 💻<br>
+            I always find new thing to do, and... Well, I'm lazy and many crazy mind will never public (that in my brain).
+        </div>
+
+        <!-- ===== GRID 2 COLUMNS ===== -->
+        <div class="grid-2col">
+
+            <!-- Left: About -->
+            <div class="info-section">
+                <h3><i class="fas fa-user-astronaut"></i> About me</h3>
+                <ul>
+                    <li><i class="fas fa-briefcase"></i> <strong>Role:</strong> Programmer, Meteorologist, Astronomer</li>
+                    <li><i class="fas fa-building"></i> <strong>Organization:</strong>
+                        <a href="https://github.com/LilyPadTeam" target="_blank">@LilyPadTeam</a>
+                    </li>
+                    <li><i class="fas fa-trophy"></i> <strong>Achievements:</strong> Pair Extraordinaire · Pull Shark x2 · Quickdraw</li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:realmg51@gmail.com">realmg51@gmail.com</a></li>
+                </ul>
+                <div class="org-badge">
+                    <i class="fas fa-users"></i> @LilyPadTeam — <em>"Brings unmeaningful multi-language programming stuff to life."</em>
+                </div>
+            </div>
+
+            <!-- Right: Tech Stack -->
+            <div class="info-section">
+                <h3><i class="fas fa-code"></i> Tech Stack (Overflows)</h3>
+                <div class="skill-tags">
+                    <span class="kotlin">Kotlin 🪄</span>
+                    <span class="csharp">C#</span>
+                    <span class="cpp">C++ 💀</span>
+                    <span class="css">CSS 😆</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <p style="font-size:0.9rem; font-weight:600; color:#475569;">⭐ Favourite things</p>
+                    <div class="fave-tags">
+                        <span>⌨️ Typo</span>
+                        <span>🐧 Linux</span>
+                        <span>💤 Sleep</span>
+                        <span>✏️ Drawing</span>
+                        <span>🌈 Emojis</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; background:#fef3c7; padding:0.6rem 1rem; border-radius:1rem; font-size:0.9rem; color:#78350f;">
+                    <i class="fas fa-star" style="color:#f59e0b;"></i>
+                    <strong>Dream:</strong> First fish working in human environment 🐟 · Own programming language · Work at Mojang
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PINNED REPOS ===== -->
+        <div style="margin-top: 0.5rem;">
+            <h3 style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.6px; color:#64748b; font-weight:600; margin-bottom:0.8rem;">
+                <i class="fas fa-thumbtack" style="color:#f59e0b; margin-right:8px;"></i> Pinned repositories
+            </h3>
+            <div class="pinned-repos">
+                <a href="https://github.com/dryfish09/NtAI" target="_blank" class="pinned-repo">
+                    <i class="fas fa-brain"></i> NtAI <span class="lang">C#</span>
+                </a>
+                <a href="https://github.com/dryfish09/ILib.Random" target="_blank" class="pinned-repo">
+                    <i class="fas fa-dice"></i> ILib.Random <span class="lang">C#</span>
+                </a>
+                <a href="https://github.com/dryfish09/ILib" target="_blank" class="pinned-repo">
+                    <i class="fas fa-cube"></i> ILib <span class="lang">C#</span>
+                </a>
+                <a href="https://github.com/ZalithLauncher/ZalithLauncher2" target="_blank" class="pinned-repo">
+                    <i class="fas fa-rocket"></i> ZalithLauncher2 <span class="lang">Kotlin</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ===== SOCIAL LINKS ===== -->
+        <div class="social-links">
+            <a href="https://github.com/dryfish09" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:realmg51@gmail.com">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://discord.gg/wr4FSEdPb" target="_blank">
+                <i class="fab fa-discord"></i> Discord (DryFish Valley)
+            </a>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-note">
+            <span class="made-with">☀️ Made with sun and cringe by DryFish 🐟</span>
+            <br>
+            <span style="opacity:0.6;">Thanks for spending time to visit!</span>
+        </div>
+
+    </div>
+</body>
+</html>
